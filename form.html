@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Request Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Maintenance Request Form</h2>
+        <form id="requestForm">
+            <!-- Section 1 -->
+            <div class="form-section active">
+                <label for="requestDate">Date of Request</label>
+                <input type="date" id="requestDate" required>
+
+                <label for="requester">Requester</label>
+                <input type="text" id="requester" required>
+
+                <button type="button" onclick="nextSection()">Next</button>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="form-section">
+                <label for="department">Department</label>
+                <input type="text" id="department" required>
+
+                <label for="issue">Issue</label>
+                <input type="text" id="issue" required>
+
+                <button type="button" onclick="nextSection()">Next</button>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="form-section">
+                <label for="description">Detailed Description</label>
+                <textarea id="description" required></textarea>
+
+                <label for="location">Location</label>
+                <select id="location" required>
+                    <option value="" disabled selected>Select Location</option>
+                    <!-- Add location options here -->
+                    <option>PLANTWIDE</option>
+                    <option>PROCESS 1 SCADA</option>
+                    <!-- More options as needed -->
+                </select>
+
+                <button type="button" onclick="nextSection()">Next</button>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="form-section">
+                <label for="specificLocation">Specific Location</label>
+                <input type="text" id="specificLocation" required>
+
+                <label for="urgency">Urgency</label>
+                <select id="urgency" required>
+                    <option value="" disabled selected>Select Urgency</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+
+                <button type="button" onclick="nextSection()">Next</button>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="form-section">
+                <label for="issuePicture">Picture of the Issue</label>
+                <input type="file" id="issuePicture" accept="image/*">
+
+                <button type="submit">Submit Request</button>
+            </div>
+        </form>
+        <p id="submitMessage"></p>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>
